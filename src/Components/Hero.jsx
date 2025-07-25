@@ -1,5 +1,7 @@
 // Hero Component
+import AvatarCanvas from "./AvatarCanvas";
 const Hero = () => {
+const modelUrl = 'https://models.readyplayer.me/6883cbf84c405a37ad3d0142.glb';
   return (
     <section id="home" className="hero">
       <div className="hero-content">
@@ -11,8 +13,7 @@ Passionate about decentralization, intelligent systems, and continuous learningâ
       </div>
       <div className="hero-photo">
         <div className="photo-placeholder">
-          ðŸ‘¤
-          <div className="photo-upload-text">Add Your Photo Here</div>
+          <AvatarCanvas modelUrl={modelUrl} />
         </div>
       </div>
     </section>
