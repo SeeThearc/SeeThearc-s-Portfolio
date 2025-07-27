@@ -1,6 +1,6 @@
-
-// Experience Component
+import useSectionReveal from "./useSectionReveal";
 const Experience = () => {
+  const [ref, visible] = useSectionReveal();
   const experienceData = [
     {
       title: "Operations Team",
@@ -11,34 +11,33 @@ const Experience = () => {
         "Increased workshop participation through strategic planning",
         "Streamlined event logistics, leading to smoother club operations"
       ],
-      date: "March 2024-Present"
+      date: "2024-Present"
     },
     {
       title: "Technical Team",
-      company: " Game Development Club",
+      company: "Game Development Club",
       description: "Support the club's technical initiatives by contributing to game development activities, event planning, and workshop execution.",
       achievements: [
         "Conducted offline gaming events to promote interactive engagement",
         "Coordinated online Unity workshops for beginner to intermediate learners",
         "Assisted in planning and executing key club activities and sessions"
       ],
-      date: "August 2024 - Present"
+      date: "2024 - Present"
     }
   ];
-
   return (
-    <section id="experience" className="section">
+    <section id="experience" className={`section${visible ? " visible" : ""}`} ref={ref}>
       <h2>Experience</h2>
       <div className="timeline">
         {experienceData.map((item, index) => (
-          <div key={index} className="timeline-item">
+          <div key={index} className={`timeline-row${index % 2 === 1 ? ' reverse' : ''}`}>
             <div className="timeline-content">
               <h3>{item.title}</h3>
               <p><strong>{item.company}</strong></p>
               <p>{item.description}</p>
               <ul>
-                {item.achievements.map((achievement, idx) => (
-                  <li key={idx}>{achievement}</li>
+                {item.achievements.map((ach, idx) => (
+                  <li key={idx}>{ach}</li>
                 ))}
               </ul>
             </div>
@@ -49,5 +48,4 @@ const Experience = () => {
     </section>
   );
 };
-
 export default Experience;

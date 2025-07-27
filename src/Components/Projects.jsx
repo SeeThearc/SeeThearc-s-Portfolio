@@ -1,5 +1,6 @@
-// Projects Component
+import useSectionReveal from "./useSectionReveal";
 const Projects = () => {
+  const [ref, visible] = useSectionReveal();
   const projectsData = [
     {
       title: "StreamSphere - An OTT Platform",
@@ -42,15 +43,11 @@ const Projects = () => {
       live: "https://coffee-blocko.vercel.app"
     }
   ];
-
   const handleProjectClick = (link) => {
-    if (link && link !== '#') {
-      window.open(link, '_blank');
-    }
+    if (link && link !== '#') window.open(link, '_blank');
   };
-
   return (
-    <section id="projects" className="section">
+    <section id="projects" className={`section${visible ? " visible" : ""}`} ref={ref}>
       <h2>Projects</h2>
       <div className="projects-grid">
         {projectsData.map((project, index) => (
@@ -66,18 +63,19 @@ const Projects = () => {
               🔗 View Project
             </a>
             <br />
-            {project.live && <a href={project.live} className="project-link" onClick={(e) => e.stopPropagation()}>
-              <img
-                src="stream.png"
-                alt="YouTube Live Icon"
-                height="20px"
-            /> Live
-            </a>}
+            {project.live && (
+              <a href={project.live} className="project-link" onClick={(e) => e.stopPropagation()}>
+                <img
+                  src="stream.png"
+                  alt="Live Icon"
+                  height="20px"
+                /> Live
+              </a>
+            )}
           </div>
         ))}
       </div>
     </section>
   );
 };
-
 export default Projects;

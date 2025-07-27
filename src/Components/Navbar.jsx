@@ -1,67 +1,33 @@
-const Navbar = ({ activeSection, scrollToSection }) => {
-  const handleResumeDownload = () => {
-    const fileId = '1Vox2dfKIGjoxUW1B6HvOVrnRblUqEKiG';
-    const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+import React from 'react';
 
-    const link = document.createElement('a');
-    link.href = downloadUrl;
-    link.download = 'Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+const sections = [
+  { id: 'education', label: 'Education' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'contact', label: 'Connect' }
+];
 
-  return (
-    <nav className="navbar">
-      <div className="nav-container">
-        <div className="logo" onClick={() => scrollToSection('home')}>
-          SeeThearc
-        </div>
-        <ul className="nav-menu">
-          <li>
-            <a 
-              className={activeSection === 'education' ? 'active' : ''}
-              onClick={() => scrollToSection('education')}
-            >
-              Education
-            </a>
-          </li>
-          <li>
-            <a 
-              className={activeSection === 'skills' ? 'active' : ''}
-              onClick={() => scrollToSection('skills')}
-            >
-              Skills
-            </a>
-          </li>
-          <li>
-            <a 
-              className={activeSection === 'experience' ? 'active' : ''}
-              onClick={() => scrollToSection('experience')}
-            >
-              Experience
-            </a>
-          </li>
-          <li>
-            <a 
-              className={activeSection === 'projects' ? 'active' : ''}
-              onClick={() => scrollToSection('projects')}
-            >
-              Projects
-            </a>
-          </li>
-          <li>
-            <a 
-              className={activeSection === 'contact' ? 'active' : ''}
-              onClick={() => scrollToSection('contact')}
-            >
-              Connect with Me
-            </a>
-          </li>
-        </ul>
+const Navbar = ({ activeSection, scrollToSection }) => (
+  <nav className="navbar">
+    <div className="nav-container">
+      <div className="logo" onClick={() => scrollToSection('home')}>
+        <span>SeeThearc</span>
       </div>
-    </nav>
-  );
-};
+      <ul className="nav-menu">
+        {sections.map(s => (
+          <li key={s.id}>
+            <a
+              className={activeSection === s.id ? 'active' : ''}
+              onClick={() => scrollToSection(s.id)}
+            >
+              {s.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </nav>
+);
 
 export default Navbar;

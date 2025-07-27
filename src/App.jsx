@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from "./Components/Navbar";
+import React, { useState, useEffect, useRef } from 'react';
+import Navbar from './Components/Navbar';
 import Hero from './Components/Hero';
 import Education from './Components/Education';
 import Skills from './Components/Skills';
@@ -9,40 +9,33 @@ import Contact from './Components/Contact';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
-
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
-    if (element) {
+    if (element)
       element.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
-    }
   };
-
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'education', 'skills', 'experience', 'projects', 'contact'];
-      const scrollPosition = window.scrollY + 150;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
-          
+      const ids = ['home', ...sections.map(s => s.id)];
+      const scrollPosition = window.scrollY + 160;
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el) {
+          const offsetTop = el.offsetTop;
+          const offsetHeight = el.offsetHeight;
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
+            setActiveSection(id === 'home' ? 'education' : id);
             break;
           }
         }
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   return (
     <>
       <div className="App">
