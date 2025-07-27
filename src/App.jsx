@@ -7,6 +7,14 @@ import Experience from './Components/Experience';
 import Projects from './Components/Projects';
 import Contact from './Components/Contact';
 
+const sections = [
+  { id: 'education', label: 'Education' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'contact', label: 'Connect' }
+];
+
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
   const scrollToSection = (sectionId) => {
