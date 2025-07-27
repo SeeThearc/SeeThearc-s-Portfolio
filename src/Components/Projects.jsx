@@ -66,7 +66,7 @@ const Projects = () => {
             {project.live && (
               <a href={project.live} className="project-link" onClick={(e) => e.stopPropagation()}>
                 <img
-                  src="stream.png"
+                  src="live.png"
                   alt="Live Icon"
                   height="20px"
                 /> Live
