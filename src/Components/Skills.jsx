@@ -22,8 +22,6 @@ const Skills = () => {
     { name: 'Git', icon: <FaGitAlt /> },
     { name: 'GitHub', icon: <FaGithubAlt /> },
     { name: 'Node.js', icon: <FaNodeJs /> },
-    { name: 'MongoDB', icon: <SiMongodb /> },
-    { name: 'Firebase', icon: <SiFirebase /> }
   ];
   return (
     <section id="skills" className={`section${visible ? " visible" : ""}`} ref={ref}>
