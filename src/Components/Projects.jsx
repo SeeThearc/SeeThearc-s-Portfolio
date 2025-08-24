@@ -40,13 +40,6 @@ const Projects = () => {
       description: "Developed a secure file transfer system in Java,Implemented AES-256 encryption to ensure data security.",
       technologies: ["Java", "WebSockets"],
       link: "#"
-    },
-    {
-      title: "Coffee Blocko",
-      description: "A platform for buying coffee and sharing your coffee experience with our community",
-      technologies: ["Solidity", "Hardhat","React.js","CSS"],
-      link: "https://github.com/SeeThearc/Coffee-Blocko",
-      live: "https://coffee-blocko.vercel.app"
     }
   ];
   const handleProjectClick = (link) => {
