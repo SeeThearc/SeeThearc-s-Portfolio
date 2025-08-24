@@ -17,6 +17,12 @@ const Projects = () => {
       live: "https://pintura-chi.vercel.app"
     },
     {
+      title: "ParkIT - Mall Parking System",
+      description: "A platform  enabling operators to book, track, and manage parking slots in real time.",
+      technologies: ["MongoDB", "Express.js", "React.js", "Node.js","CSS"],
+      link: "https://github.com/SeeThearc/ParkIT---Mall-parking-system",
+    },
+    {
       title: "Parcel Damage Detector",
       description: "A Machine Learning Model Which predicts if the parcel is damaged or not by analysing the image.",
       technologies: ["Python", "skicit-learn", "Kaggle"],
