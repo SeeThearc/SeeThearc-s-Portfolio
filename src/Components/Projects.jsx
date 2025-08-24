@@ -21,6 +21,7 @@ const Projects = () => {
       description: "A platform  enabling operators to book, track, and manage parking slots in real time.",
       technologies: ["MongoDB", "Express.js", "React.js", "Node.js","CSS"],
       link: "https://github.com/SeeThearc/ParkIT---Mall-parking-system",
+      live: "https://park-it-mall-parking-system-tfwi.vercel.app/"
     },
     {
       title: "Parcel Damage Detector",
