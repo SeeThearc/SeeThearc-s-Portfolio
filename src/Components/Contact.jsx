@@ -42,7 +42,7 @@ const contactData = [
 ];
 
 // Change this to your Google Drive resume link!
-const resumeDriveLink = "https://drive.google.com/uc?export=download&id=1mRG2s6K6UZbI56gwyu_Af4dafXgbPPqV";
+const resumeDriveLink = "https://drive.google.com/uc?export=download&id=13I-bbM_R_AcWot4CpGN-h7-u212JxWY-";
 
 const Contact = () => {
   const [ref, visible] = useSectionReveal();

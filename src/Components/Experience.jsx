@@ -3,13 +3,13 @@ const Experience = () => {
   const [ref, visible] = useSectionReveal();
   const experienceData = [
     {
-      title: "Operations Team",
+      title: "Operations Lead",
       company: "Artificial Intelligence Club",
-      description: "Contribute to strategic planning and smooth execution of club initiatives, ensuring effective coordination across events and logistics.",
+      description: "Direct operational strategy and execution of club initiatives, managing event logistics and cross-team coordination to ensure smooth functioning.",
       achievements: [
-        "Successfully coordinated and executed multiple AI workshops",
-        "Increased workshop participation through strategic planning",
-        "Streamlined event logistics, leading to smoother club operations"
+        "Successfully coordinated and executed multiple technical workshops and a 24-hour offline hackathon.",
+        "Increased participation through strategic planning, effective communication.",
+        "Streamlined event logistics, ensuring smooth operations and efficient resource management."
       ],
       date: "2024-Present"
     },
