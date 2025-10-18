@@ -5,7 +5,8 @@ const Hero = () => {
     <section id="home" className={`hero section${visible ? " visible" : ""}`} ref={ref}>
       <h1>Ayush Agrawal</h1>
       <p>
-        Hey,I’m an enthusiastic developer with a strong foundation in Data Structures & Algorithms, and a deep interest in Blockchain and Machine Learning. I enjoy building efficient solutions in C++, Python, and exploring how emerging tech can solve real-world problems.
+        Hey,I’m an enthusiastic developer with a strong fHey there! I’m a passionate developer with a solid grip on Data Structures & Algorithms and a growing expertise in full-stack web development. I love crafting efficient, scalable, and visually engaging solutions using C++, Python, and React.
+Curious by nature, I’m currently diving into Blockchain, Machine Learning, and distributed systems—always exploring how code can shape smarter, more connected worlds.oundation in Data Structures & Algorithms, and a deep interest in Blockchain and Machine Learning. I enjoy building efficient solutions in C++, Python, and exploring how emerging tech can solve real-world problems.
 Passionate about decentralization, intelligent systems, and continuous learning—I'm always excited to take on new challenges and grow as a developer.
       </p>
       <div className="hero-tags">
