@@ -62,6 +62,7 @@ const Rope = () => {
 
     // Animation (gentle swaying)
     let frame = 0;
+    let animFrameId;
     const animate = () => {
       frame += 0.01;
       for (let i = 0; i <= segmentCount; i++) {
@@ -77,11 +78,12 @@ const Rope = () => {
       rope.geometry = new THREE.TubeGeometry(curve, 500, 0.1, 12, false);
 
       renderer.render(scene, camera);
-      requestAnimationFrame(animate);
+      animFrameId = requestAnimationFrame(animate);
     };
     animate();
 
     return () => {
+      cancelAnimationFrame(animFrameId);
       renderer.dispose();
       if (renderer.domElement.parentNode) {
         renderer.domElement.parentNode.removeChild(renderer.domElement);

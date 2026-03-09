@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const sections = [
   { id: 'education', label: 'Education' },
@@ -8,26 +8,57 @@ const sections = [
   { id: 'contact', label: 'Connect' }
 ];
 
-const Navbar = ({ activeSection, scrollToSection }) => (
-  <nav className="navbar">
-    <div className="nav-container">
-      <div className="logo" onClick={() => scrollToSection('home')}>
-        <span>SeeThearc</span>
+const Navbar = ({ activeSection, scrollToSection }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleNavClick = (id) => {
+    scrollToSection(id);
+    setMenuOpen(false);
+  };
+
+  return (
+    <nav className="navbar">
+      <div className="nav-container">
+        <div className="logo" onClick={() => scrollToSection('home')}>
+          <span>SeeThearc</span>
+        </div>
+        <ul className="nav-menu">
+          {sections.map(s => (
+            <li key={s.id}>
+              <a
+                className={activeSection === s.id ? 'active' : ''}
+                onClick={() => handleNavClick(s.id)}
+              >
+                {s.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        {/* Hamburger button for mobile */}
+        <button
+          className={`hamburger${menuOpen ? ' open' : ''}`}
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label="Toggle navigation menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </div>
-      <ul className="nav-menu">
+      {/* Mobile dropdown */}
+      <div className={`mobile-menu${menuOpen ? ' open' : ''}`}>
         {sections.map(s => (
-          <li key={s.id}>
-            <a
-              className={activeSection === s.id ? 'active' : ''}
-              onClick={() => scrollToSection(s.id)}
-            >
-              {s.label}
-            </a>
-          </li>
+          <a
+            key={s.id}
+            className={activeSection === s.id ? 'active' : ''}
+            onClick={() => handleNavClick(s.id)}
+          >
+            {s.label}
+          </a>
         ))}
-      </ul>
-    </div>
-  </nav>
-);
+      </div>
+    </nav>
+  );
+};
 
 export default Navbar;

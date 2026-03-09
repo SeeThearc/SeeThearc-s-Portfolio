@@ -1,8 +1,8 @@
 import useSectionReveal from "./useSectionReveal";
-import React from "react"; // Required for JSX
+import React from "react";
 
-// Font Awesome Icons
-import { FaLinkedin, FaGithub, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaDownload } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaDownload, FaExternalLinkAlt } from "react-icons/fa";
+
 const contactData = [
   {
     type: "LinkedIn",
@@ -41,13 +41,12 @@ const contactData = [
   }
 ];
 
-// Change this to your Google Drive resume link!
 const resumeDriveLink = "https://drive.google.com/uc?export=download&id=13I-bbM_R_AcWot4CpGN-h7-u212JxWY-";
 
 const Contact = () => {
   const [ref, visible] = useSectionReveal();
   const handleContactClick = (link) => {
-    if (link) window.open(link, '_blank');
+    if (link) window.open(link, '_blank', 'noopener,noreferrer');
   };
   return (
     <section id="contact" className={`section${visible ? " visible" : ""}`} ref={ref}>
@@ -68,16 +67,16 @@ const Contact = () => {
           </div>
         ))}
         <div
-          className={`resume-card${visible ? " visible" : ""}`}
+          className="resume-card"
           onClick={() => handleContactClick(resumeDriveLink)}
           style={{ cursor: 'pointer' }}
           title="Download Resume"
         >
-          <span className="resume-title">Resume</span>
           <span className="resume-icon"><FaDownload /></span>
-          {/* <span className="resume-download">
-            Download Now
-          </span> */}
+          <span className="resume-title">Resume</span>
+          <span className="resume-download">
+            Download Now <FaExternalLinkAlt className="resume-download-icon" />
+          </span>
         </div>
       </div>
     </section>

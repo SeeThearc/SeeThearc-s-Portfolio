@@ -22,7 +22,7 @@ const Experience = () => {
         "Coordinated online Unity workshops for beginner to intermediate learners",
         "Assisted in planning and executing key club activities and sessions"
       ],
-      date: "2024 - Present"
+      date: "2024 - 2025"
     }
   ];
   return (

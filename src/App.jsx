@@ -35,7 +35,7 @@ const App = () => {
           const offsetTop = el.offsetTop;
           const offsetHeight = el.offsetHeight;
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(id === 'home' ? 'education' : id);
+            setActiveSection(id === 'home' ? '' : id);
             break;
           }
         }
