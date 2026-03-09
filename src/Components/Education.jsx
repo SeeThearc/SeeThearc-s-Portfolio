@@ -6,7 +6,7 @@ const Education = () => {
       title: "Bachelor of Computer Science",
       institution: "Vellore Institute of technology, Chennai",
       description: "Specialized in Data Structures, Algorithms, Database Management, Software Engineering, Web Development, Blockchain.",
-      gpa: "GPA: 9.28/10",
+      gpa: "GPA: 9.25/10",
       date: "2023-2027"
     },
     {
